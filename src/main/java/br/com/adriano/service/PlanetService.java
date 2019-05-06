@@ -35,21 +35,6 @@ public class PlanetService {
 		return repository.findByName(name, pageable);
 	}
 	
-	/* FILTER NAME QUERY LIKE
-	public Page<Planet> findAll(String name, Pageable pageable) {
-		logger.info("Searching for planets > name:" + name + "; pageable:" + pageable.toString()); 
-		if (Strings.isNullOrEmpty(name)) {
-			return repository.findAll(pageable);
-		}
-		ExampleMatcher matcher = ExampleMatcher.matching()     
-                .withStringMatcher(StringMatcher.CONTAINING)   // Match string containing pattern   
-                .withIgnoreCase();
-		Planet filterBy = new Planet();
-		filterBy.setName(name);
-		Example<Planet> example = Example.of(filterBy, matcher);
-		return repository.findAll(example, pageable);
-	}*/
-
 	public Planet save(Planet planet) {
 		setNumberOfAppearanceInStarWars(planet);
 		logger.info("Saving planet > " + planet.toString());

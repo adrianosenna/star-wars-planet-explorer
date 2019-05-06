@@ -54,13 +54,4 @@ public class PlanetResource {
 				.orElseGet(() -> ResponseEntity.notFound().build());
 	}
 	
-	/*
-	  Endpoint for update the number of appearances of the planets saved.
-	 
-	@GetMapping
-	public ResponseEntity gettUpdates() {
-		return ResponseEntity.ok().build();
-	}
-	*/
-
 }
